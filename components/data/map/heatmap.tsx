@@ -22,7 +22,7 @@ const Heatmap: React.FC<HeatmapProps> = ({ data }) => {
       data,
       getPosition: d => [d.longitude, d.latitude],
       getWeight: d => d.intensity,
-      radiusPixels: 60,
+      radiusPixels: 30,
     }),
   ];
 

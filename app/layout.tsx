@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
-
-import { Assistant } from "next/font/google";
 import Navmenu from "@/components/custom/navmenu";
 
-const assistant = Assistant({weight: ["200", "300", "400"], subsets: ["latin"]})
+import { Assistant, Nunito, Sarabun, Montserrat, Poppins, Raleway, Hind} from "next/font/google";
+import Head from "next/head";
+const sarabun = Sarabun({weight: ['100'], subsets: ['latin']})
+
+const montserrat = Montserrat({weight: ['100' , '200'], subsets: ['latin']})
+const poppins = Hind({weight: ['300', '400'], subsets: ['latin']})
 
 export const metadata: Metadata = {
-  title: "Courier Tracker",
+  title: "CourierPath",
   description: "Analyze and track your food delivery work",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${assistant.className}`}>
+      <body className={`${poppins.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

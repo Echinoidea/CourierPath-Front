@@ -15,7 +15,7 @@ export const Calendar = ({
         to={data[data.length - 1].day}
         emptyColor="#1a1a1a"
         colors={[ '#61cdbb', '#97e3d5', '#e8c1a0', '#f47560' ]}
-        margin={{ top: -280, right: 0, bottom: 0, left: 0 }}
+        margin={{ top: -50, right: 0, bottom: 0, left: 0 }}
         yearSpacing={40}
         monthBorderColor="#333333"
         dayBorderWidth={2}
@@ -25,7 +25,7 @@ export const Calendar = ({
           {
             anchor: 'bottom-right',
             direction: 'row',
-            translateY: 24,
+            translateY: 0,
             itemCount: 4,
             itemWidth: 42,
             itemHeight: 36,
