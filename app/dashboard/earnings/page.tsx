@@ -1,5 +1,6 @@
 'use client';
 
+import { DatePicker } from "@/components/custom/date-range";
 import MyBarChart from "@/components/data/charts/chartsjs-test";
 import { LineGraph } from "@/components/data/charts/line-graph";
 import CalendarWidget from "@/components/data/widgets/calendar";
@@ -7,7 +8,7 @@ import HistogramWidget from "@/components/data/widgets/histogram";
 import LineWidget from "@/components/data/widgets/line-graph";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { dailyEarnings } from "@/placeholder-data/daily-earnings";
-import { ChartOptions } from "chart.js";
+import { Chart, ChartOptions, registerables } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 
 const data = [
@@ -32,8 +33,8 @@ const lineData = {
       label: "Median Hourly Wage",
       data: [25, 27, 26, 28, 30],
       fill: true,
-      backgroundColor: "rgba(250, 215, 160, 0.6)",
-      borderColor: "rgba(250, 215, 160, 1)"
+      backgroundColor: "rgba(255, 133, 117, 0.8)",
+      borderColor: "rgba(255, 133, 117, 1)"
     }
   ]
 }
@@ -85,10 +86,16 @@ const daysData = [
   { day: 'Sunday', wage: 24 },
 ];
 
+Chart.register(...registerables);
+
 export default function Dashboard() {
   return (
     <main className="flex flex-col gap-4">
-      
+      <div className="flex flex-row gap-4 items-start">
+        <p className="text-2xl">Earnings Overview</p>
+        <DatePicker/>
+      </div>
+
       {/* Financial overview */}
       <div className="flex flex-row gap-4">
         <Card className="basis-1/5">

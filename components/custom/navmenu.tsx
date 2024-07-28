@@ -16,6 +16,8 @@ import { AppSelector } from "./app-selector"
 import { DatePicker } from "./date-range"
 import { cn } from "@/lib/utils"
 import React from "react"
+import { Avatar } from "../ui/avatar"
+import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 
 const dashboards: {title: string; href: string; description: string}[] = [
   {
@@ -125,8 +127,13 @@ export default function NavMenu() {
 
           {/* Right section of the nav */}
           <div className="hidden md:flex items-center space-x-4 pt-2 pr-2">
-            <DatePicker/>
+            
             <AppSelector/>
+            <Avatar className="flex pt-0.5 items-center justify-center border-2">
+              <AvatarImage></AvatarImage>
+              <AvatarFallback>GH</AvatarFallback>
+            </Avatar>
+            <ThemeToggle/>
           </div>
         </div>
     </nav>
